@@ -2,7 +2,7 @@ import { config } from "dotenv";
 config();
 
 // Load API Server
-import "./api/"
+import "./api/";
 
 import CoreBot from "./structures/CoreBot";
 

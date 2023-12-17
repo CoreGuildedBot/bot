@@ -2,7 +2,6 @@ import { glob } from "glob";
 import { Client, Collection } from "guilded.js";
 import { promisify } from "util";
 import { CommandType } from "../typings/Command";
-import mongoose from "mongoose";
 import logger from "../utils/logger";
 
 const globPromise = promisify(glob);
@@ -44,9 +43,5 @@ export default class CoreBot extends Client {
         this.load()
         .then(() => logger.info(`Loaded ${this.commands.size} commands.`));
         this.login();
-
-        await mongoose.connect(`${process.env.MONGODB_URI}`)
-        .then(() => logger.info(`Connected to the database.`))
-        .catch((err) => logger.error(err));
     };
 };
