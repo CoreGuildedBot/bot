@@ -14,3 +14,5 @@ async function main() {
 };
 
 main();
+
+import "./utils/keepAlive";
