@@ -12,7 +12,9 @@ export default class CoreBot extends Client {
 
     constructor() {
         super({
-            token: `${process.env.TOKEN}`
+            token: `${process.env.ENVIRONMENT === "PRODUCTION" 
+                ? process.env.TOKEN 
+                : process.env.BETA_TOKEN}`
         });
     };
 
